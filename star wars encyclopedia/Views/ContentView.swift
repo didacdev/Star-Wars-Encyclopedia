@@ -17,6 +17,14 @@ struct ContentView: View {
             
             VStack(alignment: .leading) {
                 HeadingView()
+                Spacer()
+                VStack (spacing: 0){
+                    BadgeView()
+                    BadgeView()
+                    BadgeView()
+                    BadgeView()
+                }
+                Spacer()
             }
             .frame(
                 minWidth: 0,
