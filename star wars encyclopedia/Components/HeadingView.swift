@@ -9,13 +9,19 @@ import SwiftUI
 
 struct HeadingView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Characters")
-                .font(.custom("Poppins-ExtraBold", size: 30))
-            Text("Characters")
-                .font(.custom("Aurek-Besh", size: 20))
+            
+        VStack (alignment: .leading) {
+            Text("LIST OF")
+                .font(.custom("Raleway-Medium", size: 20))
+            .foregroundColor(Color.subheading)
+            Text("CHARACTERS")
+                .font(.custom("Poppins-ExtraBold", size: 35))
+            .foregroundColor(Color.heading)
+            Text("List of characters")
+                .font(.custom("Aurek-Besh", size: 8))
+                .foregroundColor(Color.subheading)
         }
-        
+        .padding()
     }
 }
 
