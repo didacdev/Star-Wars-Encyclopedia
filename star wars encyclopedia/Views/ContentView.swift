@@ -15,7 +15,7 @@ struct ContentView: View {
             Color.background
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(alignment: .leading) {
+            VStack() {
                 HeadingView()
                 Spacer()
                 VStack (spacing: 0){
@@ -25,6 +25,7 @@ struct ContentView: View {
                     BadgeView()
                 }
                 Spacer()
+                PagesView()
             }
             .frame(
                 minWidth: 0,

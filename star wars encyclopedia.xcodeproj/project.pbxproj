@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503C92B1D04BB0077969C /* PagesView.swift */; };
+		C39503CC2B1D052C0077969C /* PageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503CB2B1D052C0077969C /* PageButtonView.swift */; };
 		C3BE7CD02B1B8A49008491CC /* Aurek-Besh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CCF2B1B8A49008491CC /* Aurek-Besh.ttf */; };
 		C3BE7CD52B1B967D008491CC /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CD42B1B967D008491CC /* Poppins-ExtraBold.ttf */; };
 		C3BE7CD72B1B9693008491CC /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CD62B1B9693008491CC /* Poppins-Regular.ttf */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C39503C92B1D04BB0077969C /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
+		C39503CB2B1D052C0077969C /* PageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageButtonView.swift; sourceTree = "<group>"; };
 		C3BE7CCF2B1B8A49008491CC /* Aurek-Besh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aurek-Besh.ttf"; sourceTree = "<group>"; };
 		C3BE7CD32B1B8E81008491CC /* star-wars-encyclopedia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "star-wars-encyclopedia-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C3BE7CD42B1B967D008491CC /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			children = (
 				C3BE7CDE2B1BB1FE008491CC /* HeadingView.swift */,
 				C3BE7CE02B1BBD25008491CC /* BadgeView.swift */,
+				C39503C92B1D04BB0077969C /* PagesView.swift */,
+				C39503CB2B1D052C0077969C /* PageButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -318,8 +324,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3BE7CE12B1BBD25008491CC /* BadgeView.swift in Sources */,
+				C39503CC2B1D052C0077969C /* PageButtonView.swift in Sources */,
 				C3FE7CB32B1A6642004DA4BD /* ContentView.swift in Sources */,
 				C3BE7CDF2B1BB1FE008491CC /* HeadingView.swift in Sources */,
+				C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */,
 				C3FE7CB12B1A6642004DA4BD /* star_wars_encyclopediaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

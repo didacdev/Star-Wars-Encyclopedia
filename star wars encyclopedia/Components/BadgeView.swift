@@ -38,7 +38,6 @@ struct BadgeView: View {
             Text("Name")
                 .foregroundColor(Color.subheading)
                 .font(.custom("Aurek-Besh", size: 10))
-                .multilineTextAlignment(.leading)
                 .padding([.leading, .bottom, .trailing])
                 .frame(
                     maxWidth: .infinity,

@@ -22,6 +22,10 @@ struct HeadingView: View {
                 .foregroundColor(Color.subheading)
         }
         .padding()
+        .frame(
+            maxWidth: .infinity,
+            alignment: .leading
+        )
     }
 }
 
