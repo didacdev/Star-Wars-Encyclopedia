@@ -11,7 +11,7 @@ import SwiftUI
 struct star_wars_encyclopediaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CharactersListView()
         }
     }
 }

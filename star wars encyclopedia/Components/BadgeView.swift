@@ -8,24 +8,13 @@
 import SwiftUI
 
 struct BadgeView: View {
+    
+    @State var text: String
+    
     var body: some View {
         VStack(alignment: .leading) {
-            VStack (spacing: 0){
-                Divider()
-                    .frame(height: 2.0)
-                    .background(Color.bar)
-                HStack {
-                    Divider()
-                        .frame(width: 20.0, height: 2.0)
-                        .background(Color.bar)
-                    Spacer()
-                    Divider()
-                        .frame(width: 20.0, height: 2.0)
-                        .background(Color.bar)
-                }
-            }
-            
-            Text("NAME")
+            UpperBarView()
+            Text(text)
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
                 .font(.custom("Raleway-Medium", size: 35))
@@ -35,7 +24,7 @@ struct BadgeView: View {
                     alignment: .leading
                 )
                 
-            Text("Name")
+            Text(text)
                 .foregroundColor(Color.subheading)
                 .font(.custom("Aurek-Besh", size: 10))
                 .padding([.leading, .bottom, .trailing])
@@ -44,20 +33,7 @@ struct BadgeView: View {
                     alignment: .leading
                 )
                 
-            VStack (spacing: 0){
-                HStack {
-                    Divider()
-                        .frame(width: 20.0, height: 2.0)
-                        .background(Color.bar)
-                    Spacer()
-                    Divider()
-                        .frame(width: 20.0, height: 2.0)
-                        .background(Color.bar)
-                }
-                Divider()
-                    .frame(height: 2.0)
-                    .background(Color.bar)
-            }
+            LowerBarView()
         }
         .background(.labelBackground)
         
@@ -65,5 +41,5 @@ struct BadgeView: View {
 }
 
 #Preview {
-    BadgeView()
+    BadgeView(text: "Name")
 }

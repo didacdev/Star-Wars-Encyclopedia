@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CharactersListView: View {
     var body: some View {
         
         ZStack {
@@ -19,10 +19,10 @@ struct ContentView: View {
                 HeadingView()
                 Spacer()
                 VStack (spacing: 0){
-                    BadgeView()
-                    BadgeView()
-                    BadgeView()
-                    BadgeView()
+                    BadgeView(text: "NAME")
+                    BadgeView(text: "NAME")
+                    BadgeView(text: "NAME")
+                    BadgeView(text: "NAME")
                 }
                 Spacer()
                 PagesView()
@@ -49,5 +49,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    CharactersListView()
 }
