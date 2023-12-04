@@ -23,7 +23,7 @@ struct PageButtonView: View {
                     .foregroundColor(.background)
             }
             .frame(
-                width: 73,
+                width: 90,
                 height: 43
             )
             .background(Color.white, in: RoundedRectangle(cornerRadius: 40))
@@ -37,7 +37,7 @@ struct PageButtonView: View {
                     .foregroundColor(.bar)
             }
             .frame(
-                width: 73,
+                width: 90,
                 height: 43
             )
             .background(Color.background, in: RoundedRectangle(cornerRadius: 40))

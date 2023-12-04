@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct PagesView: View {
+    
+    @State var actualPage: String
+    
     var body: some View {
         HStack {
-            PageButtonView(selected: true, pageNumber: "1")
-            PageButtonView(selected: false, pageNumber: "2")
-            PageButtonView(selected: false, pageNumber: "3")
-            PageButtonView(selected: false, pageNumber: "4")
+            PageButtonView(selected: false, pageNumber: "Back")
+            PageButtonView(selected: true, pageNumber: actualPage)
+            PageButtonView(selected: false, pageNumber: "Next")
         }
         .padding(.all, 3)
         .background(Color.background)
@@ -26,5 +28,5 @@ struct PagesView: View {
 }
 
 #Preview {
-    PagesView()
+    PagesView(actualPage: "1")
 }

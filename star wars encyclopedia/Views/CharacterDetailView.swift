@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
+    
+    @State var person: Person
+    
     var body: some View {
         ZStack {
             Color.background
@@ -15,7 +18,7 @@ struct CharacterDetailView: View {
             
             VStack {
                 Spacer()
-                BadgeView(text: "NAME")
+                BadgeView(person: person)
                 Spacer()
                 VStack (alignment: .leading, spacing: 20){
                     UpperBarView()
@@ -44,5 +47,23 @@ struct CharacterDetailView: View {
 }
 
 #Preview {
-    CharacterDetailView()
+    CharacterDetailView(person: Person(
+        name: "Luke Skywalker",
+        birth_year: "19 BBY",
+        eye_color: "Blue",
+        gender: "Male",
+        hair_color: "Blond",
+        height: "172",
+        mass: "77",
+        skin_color: "Fair",
+        homeworld: "https://swapi.dev/api/planets/1/",
+        films: [
+            "https://swapi.dev/api/films/1/"],
+        species: ["https://swapi.dev/api/species/1/"],
+        starships: ["https://swapi.dev/api/starships/12/"],
+        vehicles: ["https://swapi.dev/api/vehicles/14/"],
+        url: "https://swapi.dev/api/people/1/",
+        created: "2014-12-09T13:50:51.644000Z",
+        edited: "2014-12-10T13:52:43.172000Z"
+    ))
 }

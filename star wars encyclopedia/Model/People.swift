@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct CharacterList: Decodable {
+struct PeopleList: Decodable {
     
-    let results: [Character]
+    let results: [Person]
 }
 
-struct Character: Decodable {
+struct Person: Decodable {
     
     let name: String
     let birth_year: String

@@ -9,13 +9,24 @@ import Alamofire
 
 final class StarWarsApi {
     
-    func loadCharacter(completion: @escaping (Result<[Character], Error>) -> ())  {
+    private var page: String
+    
+    init(paramenter: String) {
         
-        AF.request("https://swapi.dev/api/people/").responseDecodable(of: CharacterList.self) { response in
+        if paramenter == "1" {
+            self.page = ""
+        } else {
+            self.page = "?page=\(paramenter)"
+        }
+    }
+    
+    func loadPerson(completion: @escaping (Result<[Person], Error>) -> ())  {
+        
+        AF.request("https://swapi.dev/api/people/\(page)").responseDecodable(of: PeopleList.self) { response in
             
             switch response.result {
-            case .success(let characterList):
-                completion(.success(characterList.results))
+            case .success(let peopleList):
+                completion(.success(peopleList.results))
             case .failure(let error):
                 completion(.failure(error))
             }

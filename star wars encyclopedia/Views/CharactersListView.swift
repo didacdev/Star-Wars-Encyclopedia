@@ -9,23 +9,54 @@
 import SwiftUI
 
 struct CharactersListView: View {
+    
+    @State var peopleList: [Person] = []
+    let page: String
+    
     var body: some View {
         
         ZStack {
-            Color.background
+            Color("Background")
                 .edgesIgnoringSafeArea(.all)
             
             VStack() {
                 HeadingView()
                 Spacer()
-                VStack (spacing: 0){
-                    BadgeView(text: "NAME")
-                    BadgeView(text: "NAME")
-                    BadgeView(text: "NAME")
-                    BadgeView(text: "NAME")
+                
+                NavigationView {
+                    ZStack{
+                        Color("Background")
+                            .edgesIgnoringSafeArea(.all)
+                        
+                        List(peopleList, id: \.name) { person in
+                            BadgeView(person: person)
+                        }
+                        .frame(width: nil)
+                        .onAppear() {
+                            
+                            StarWarsApi(paramenter: page).loadPerson { result in
+                                
+                                switch result {
+                                case .success(let peopleList):
+                                    self.peopleList = peopleList
+                                case .failure(let error):
+                                    print(error)
+                                }
+                            }
+                        }
+                        .listStyle(PlainListStyle())
+                    }
                 }
+                .background(Color("Background"))
+                
                 Spacer()
-                PagesView()
+                
+                if let number = page.last {
+                    PagesView(actualPage: String(number))
+                } else {
+                    // Proporcionar un valor predeterminado si parameter.last es nil
+                    PagesView(actualPage: "1")
+                }
             }
             .frame(
                 minWidth: 0,
@@ -37,17 +68,8 @@ struct CharactersListView: View {
         }
         
     }
-    
-//    init() {
-//        for familiy in UIFont.familyNames {
-//            print(familiy)
-//            for font in UIFont.fontNames(forFamilyName: familiy) {
-//                print("-- \(font)")
-//            }
-//        }
-//    }
 }
 
 #Preview {
-    CharactersListView()
+    CharactersListView(page: "1")
 }
