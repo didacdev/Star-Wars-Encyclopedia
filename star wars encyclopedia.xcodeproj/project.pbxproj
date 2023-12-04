@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503C92B1D04BB0077969C /* PagesView.swift */; };
 		C39503CC2B1D052C0077969C /* PageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503CB2B1D052C0077969C /* PageButtonView.swift */; };
+		C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */; };
+		C3B22B872B1E4D8700D504C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C3B22B862B1E4D8700D504C3 /* Alamofire */; };
+		C3B22B892B1E4DD300D504C3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B882B1E4DD300D504C3 /* Character.swift */; };
 		C3BE7CD02B1B8A49008491CC /* Aurek-Besh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CCF2B1B8A49008491CC /* Aurek-Besh.ttf */; };
 		C3BE7CD52B1B967D008491CC /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CD42B1B967D008491CC /* Poppins-ExtraBold.ttf */; };
 		C3BE7CD72B1B9693008491CC /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CD62B1B9693008491CC /* Poppins-Regular.ttf */; };
@@ -24,9 +27,6 @@
 		C3FE7CB32B1A6642004DA4BD /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CB22B1A6642004DA4BD /* CharactersListView.swift */; };
 		C3FE7CB52B1A6645004DA4BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3FE7CB42B1A6645004DA4BD /* Assets.xcassets */; };
 		C3FE7CB82B1A6645004DA4BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3FE7CB72B1A6645004DA4BD /* Preview Assets.xcassets */; };
-		C3FE7CC22B1A6646004DA4BD /* star_wars_encyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CC12B1A6646004DA4BD /* star_wars_encyclopediaTests.swift */; };
-		C3FE7CCC2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CCB2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift */; };
-		C3FE7CCE2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CCD2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,8 @@
 /* Begin PBXFileReference section */
 		C39503C92B1D04BB0077969C /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		C39503CB2B1D052C0077969C /* PageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageButtonView.swift; sourceTree = "<group>"; };
+		C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAPI.swift; sourceTree = "<group>"; };
+		C3B22B882B1E4DD300D504C3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		C3BE7CCF2B1B8A49008491CC /* Aurek-Besh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aurek-Besh.ttf"; sourceTree = "<group>"; };
 		C3BE7CD32B1B8E81008491CC /* star-wars-encyclopedia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "star-wars-encyclopedia-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C3BE7CD42B1B967D008491CC /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -67,10 +69,7 @@
 		C3FE7CB42B1A6645004DA4BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3FE7CB72B1A6645004DA4BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3FE7CBD2B1A6646004DA4BD /* star wars encyclopediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "star wars encyclopediaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3FE7CC12B1A6646004DA4BD /* star_wars_encyclopediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = star_wars_encyclopediaTests.swift; sourceTree = "<group>"; };
 		C3FE7CC72B1A6646004DA4BD /* star wars encyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "star wars encyclopediaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3FE7CCB2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = star_wars_encyclopediaUITests.swift; sourceTree = "<group>"; };
-		C3FE7CCD2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = star_wars_encyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B22B872B1E4D8700D504C3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +144,7 @@
 		C3C66A532B1E3CB300AC4A65 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -151,6 +152,7 @@
 		C3C66A542B1E3CBC00AC4A65 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C3B22B882B1E4DD300D504C3 /* Character.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,8 +162,6 @@
 			children = (
 				C3FE7CAF2B1A6642004DA4BD /* star wars encyclopedia */,
 				C3BE7CD32B1B8E81008491CC /* star-wars-encyclopedia-Info.plist */,
-				C3FE7CC02B1A6646004DA4BD /* star wars encyclopediaTests */,
-				C3FE7CCA2B1A6646004DA4BD /* star wars encyclopediaUITests */,
 				C3FE7CAE2B1A6642004DA4BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -199,23 +199,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C3FE7CC02B1A6646004DA4BD /* star wars encyclopediaTests */ = {
-			isa = PBXGroup;
-			children = (
-				C3FE7CC12B1A6646004DA4BD /* star_wars_encyclopediaTests.swift */,
-			);
-			path = "star wars encyclopediaTests";
-			sourceTree = "<group>";
-		};
-		C3FE7CCA2B1A6646004DA4BD /* star wars encyclopediaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C3FE7CCB2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift */,
-				C3FE7CCD2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift */,
-			);
-			path = "star wars encyclopediaUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +215,9 @@
 			dependencies = (
 			);
 			name = "star wars encyclopedia";
+			packageProductDependencies = (
+				C3B22B862B1E4D8700D504C3 /* Alamofire */,
+			);
 			productName = "star wars encyclopedia";
 			productReference = C3FE7CAD2B1A6642004DA4BD /* star wars encyclopedia.app */;
 			productType = "com.apple.product-type.application";
@@ -304,6 +290,9 @@
 				Base,
 			);
 			mainGroup = C3FE7CA42B1A6642004DA4BD;
+			packageReferences = (
+				C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C3FE7CAE2B1A6642004DA4BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -354,9 +343,11 @@
 				C3C66A502B1E37B600AC4A65 /* UpperBarView.swift in Sources */,
 				C3BE7CE12B1BBD25008491CC /* BadgeView.swift in Sources */,
 				C3C66A4E2B1E355600AC4A65 /* DetailView.swift in Sources */,
+				C3B22B892B1E4DD300D504C3 /* Character.swift in Sources */,
 				C39503CC2B1D052C0077969C /* PageButtonView.swift in Sources */,
 				C3FE7CB32B1A6642004DA4BD /* CharactersListView.swift in Sources */,
 				C3C66A4C2B1E354800AC4A65 /* CharacterDetailView.swift in Sources */,
+				C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */,
 				C3C66A522B1E382100AC4A65 /* LowerBarView.swift in Sources */,
 				C3BE7CDF2B1BB1FE008491CC /* HeadingView.swift in Sources */,
 				C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */,
@@ -368,7 +359,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3FE7CC22B1A6646004DA4BD /* star_wars_encyclopediaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,8 +366,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3FE7CCC2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift in Sources */,
-				C3FE7CCE2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +674,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3B22B862B1E4D8700D504C3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C3FE7CA52B1A6642004DA4BD /* Project object */;
 }
