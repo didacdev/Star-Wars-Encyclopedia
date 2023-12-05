@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503C92B1D04BB0077969C /* PagesView.swift */; };
-		C39503CC2B1D052C0077969C /* PageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503CB2B1D052C0077969C /* PageButtonView.swift */; };
 		C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */; };
 		C3B22B872B1E4D8700D504C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C3B22B862B1E4D8700D504C3 /* Alamofire */; };
 		C3B22B892B1E4DD300D504C3 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B882B1E4DD300D504C3 /* People.swift */; };
@@ -48,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		C39503C92B1D04BB0077969C /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
-		C39503CB2B1D052C0077969C /* PageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageButtonView.swift; sourceTree = "<group>"; };
 		C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAPI.swift; sourceTree = "<group>"; };
 		C3B22B882B1E4DD300D504C3 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		C3BE7CCF2B1B8A49008491CC /* Aurek-Besh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aurek-Besh.ttf"; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 				C3BE7CDE2B1BB1FE008491CC /* HeadingView.swift */,
 				C3BE7CE02B1BBD25008491CC /* BadgeView.swift */,
 				C39503C92B1D04BB0077969C /* PagesView.swift */,
-				C39503CB2B1D052C0077969C /* PageButtonView.swift */,
 				C3C66A4D2B1E355600AC4A65 /* DetailView.swift */,
 				C3C66A4F2B1E37B600AC4A65 /* UpperBarView.swift */,
 				C3C66A512B1E382100AC4A65 /* LowerBarView.swift */,
@@ -344,7 +341,6 @@
 				C3BE7CE12B1BBD25008491CC /* BadgeView.swift in Sources */,
 				C3C66A4E2B1E355600AC4A65 /* DetailView.swift in Sources */,
 				C3B22B892B1E4DD300D504C3 /* People.swift in Sources */,
-				C39503CC2B1D052C0077969C /* PageButtonView.swift in Sources */,
 				C3FE7CB32B1A6642004DA4BD /* CharactersListView.swift in Sources */,
 				C3C66A4C2B1E354800AC4A65 /* CharacterDetailView.swift in Sources */,
 				C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */,

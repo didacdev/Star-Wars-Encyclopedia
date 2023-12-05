@@ -11,7 +11,7 @@ import SwiftUI
 struct CharactersListView: View {
     
     @State var peopleList: [Person] = []
-    let page: String
+    @State var page: Int = 1
     
     var body: some View {
         
@@ -34,7 +34,7 @@ struct CharactersListView: View {
                         .frame(width: nil)
                         .onAppear() {
                             
-                            StarWarsApi(paramenter: page).loadPerson { result in
+                            StarWarsApi(paramenter: String(page)).loadPerson { result in
                                 
                                 switch result {
                                 case .success(let peopleList):
@@ -51,12 +51,8 @@ struct CharactersListView: View {
                 
                 Spacer()
                 
-                if let number = page.last {
-                    PagesView(actualPage: String(number))
-                } else {
-                    // Proporcionar un valor predeterminado si parameter.last es nil
-                    PagesView(actualPage: "1")
-                }
+                PagesView(actualPage: String(page), page: $page, peopleList: $peopleList)
+                
             }
             .frame(
                 minWidth: 0,
@@ -71,5 +67,5 @@ struct CharactersListView: View {
 }
 
 #Preview {
-    CharactersListView(page: "1")
+    CharactersListView()
 }
