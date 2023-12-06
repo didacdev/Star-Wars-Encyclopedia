@@ -157,7 +157,7 @@
 		C3FE7CA42B1A6642004DA4BD = {
 			isa = PBXGroup;
 			children = (
-				C3FE7CAF2B1A6642004DA4BD /* star wars encyclopedia */,
+				C3FE7CAF2B1A6642004DA4BD /* Star Wars Encyclopedia */,
 				C3BE7CD32B1B8E81008491CC /* star-wars-encyclopedia-Info.plist */,
 				C3FE7CAE2B1A6642004DA4BD /* Products */,
 			);
@@ -173,7 +173,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C3FE7CAF2B1A6642004DA4BD /* star wars encyclopedia */ = {
+		C3FE7CAF2B1A6642004DA4BD /* Star Wars Encyclopedia */ = {
 			isa = PBXGroup;
 			children = (
 				C3FE7CB02B1A6642004DA4BD /* star_wars_encyclopediaApp.swift */,
@@ -185,7 +185,7 @@
 				C3FE7CB42B1A6645004DA4BD /* Assets.xcassets */,
 				C3FE7CB62B1A6645004DA4BD /* Preview Content */,
 			);
-			path = "star wars encyclopedia";
+			path = "Star Wars Encyclopedia";
 			sourceTree = "<group>";
 		};
 		C3FE7CB62B1A6645004DA4BD /* Preview Content */ = {
@@ -278,7 +278,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C3FE7CA82B1A6642004DA4BD /* Build configuration list for PBXProject "star wars encyclopedia" */;
+			buildConfigurationList = C3FE7CA82B1A6642004DA4BD /* Build configuration list for PBXProject "Star Wars Encyclopedia" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -633,7 +633,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C3FE7CA82B1A6642004DA4BD /* Build configuration list for PBXProject "star wars encyclopedia" */ = {
+		C3FE7CA82B1A6642004DA4BD /* Build configuration list for PBXProject "Star Wars Encyclopedia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3FE7CCF2B1A6646004DA4BD /* Debug */,

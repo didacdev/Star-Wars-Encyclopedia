@@ -12,6 +12,7 @@ struct CharactersListView: View {
     
     @State var peopleList: [Person] = []
     @State var page: Int = 1
+    @State var isPresented: Bool = false
     
     var body: some View {
         
@@ -41,6 +42,7 @@ struct CharactersListView: View {
                                     self.peopleList = peopleList
                                 case .failure(let error):
                                     print(error)
+                                    isPresented = true
                                 }
                             }
                         }
@@ -54,6 +56,12 @@ struct CharactersListView: View {
                 PagesView(actualPage: String(page), page: $page, peopleList: $peopleList)
                 
             }
+            .alert(isPresented: $isPresented, content: {
+                Alert(title: Text("Connection error"),
+                      message: Text("Star Wars Encyclopedia can't connect to the database"),
+                      dismissButton: Alert.Button.default(Text("Close"))
+                )
+            })
             .frame(
                 minWidth: 0,
                 maxWidth: .infinity,
