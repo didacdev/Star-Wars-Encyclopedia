@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     
-    @State var person: Person
+    var person: Person
     
     var body: some View {
         ZStack {

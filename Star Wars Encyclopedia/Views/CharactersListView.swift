@@ -27,34 +27,40 @@ struct CharactersListView: View {
                 NavigationView {
                     ZStack{
                         Color("Background")
-                            .edgesIgnoringSafeArea(.all)
+                                    .edgesIgnoringSafeArea(.all)
                         
-                        List(peopleList, id: \.name) { person in
-                            BadgeView(person: person)
-                        }
-                        .frame(width: nil)
-                        .onAppear() {
-                            
-                            StarWarsApi(paramenter: String(page)).loadPerson { result in
+                        VStack {
+                            List(peopleList, id: \.name) { person in
                                 
-                                switch result {
-                                case .success(let peopleList):
-                                    self.peopleList = peopleList
-                                case .failure(let error):
-                                    print(error)
-                                    isPresented = true
+                                NavigationLink(destination: CharacterDetailView(person: person)) {
+                                    BadgeView(person: person)
+                                        .background(Color("Background"))
+                                }
+                                .listRowBackground(Color("Background"))
+                                
+                            }
+                            .frame(width: nil)
+                            .onAppear() {
+                                
+                                StarWarsApi(paramenter: String(page)).loadPerson { result in
+                                    
+                                    switch result {
+                                    case .success(let peopleList):
+                                        self.peopleList = peopleList
+                                    case .failure(let error):
+                                        print(error)
+                                        isPresented = true
+                                    }
                                 }
                             }
+                                .listStyle(PlainListStyle())
+                            Spacer()
+                            
+                            PagesView(actualPage: String(page), page: $page, peopleList: $peopleList)
+                                .padding(.top)
                         }
-                        .listStyle(PlainListStyle())
                     }
                 }
-                .background(Color("Background"))
-                
-                Spacer()
-                
-                PagesView(actualPage: String(page), page: $page, peopleList: $peopleList)
-                
             }
             .alert(isPresented: $isPresented, content: {
                 Alert(title: Text("Connection error"),
