@@ -11,13 +11,13 @@ struct HeadingView: View {
     var body: some View {
             
         VStack (alignment: .leading) {
-            Text("LIST OF")
+            Text("STAR WARS")
                 .font(.custom("Raleway-Medium", size: 20))
             .foregroundColor(Color.subheading)
             Text("CHARACTERS")
                 .font(.custom("Poppins-ExtraBold", size: 35))
             .foregroundColor(Color.heading)
-            Text("List of characters")
+            Text("Star Wars characters")
                 .font(.custom("Aurek-Besh", size: 8))
                 .foregroundColor(Color.subheading)
         }

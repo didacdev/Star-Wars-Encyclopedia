@@ -32,12 +32,16 @@ struct CharactersListView: View {
                         VStack {
                             List(peopleList, id: \.name) { person in
                                 
-                                NavigationLink(destination: CharacterDetailView(person: person)) {
+                                HStack {
                                     BadgeView(person: person)
-                                        .background(Color("Background"))
                                 }
+                                .overlay(
+                                    NavigationLink(destination: CharacterDetailView(person: person)) {
+                                        EmptyView()
+                                    }
+                                        .padding()
+                                )
                                 .listRowBackground(Color("Background"))
-                                
                             }
                             .frame(width: nil)
                             .onAppear() {
