@@ -75,7 +75,7 @@ struct PagesView: View {
     }
     
     func getPeople() {
-        StarWarsApi(page: String(page), url: "https://swapi.dev/api/people/").loadPerson { result in
+        StarWarsApi().loadPeople(page: String(page)) { result in
             
             switch result {
             case .success(let peopleList):

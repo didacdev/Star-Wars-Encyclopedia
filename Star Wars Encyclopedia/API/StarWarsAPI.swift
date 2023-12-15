@@ -6,21 +6,17 @@
 //
 
 import Alamofire
+import Foundation
 
 final class StarWarsApi {
     
-    private var url: String
-    
-    init(page: String, url: String) {
+    func loadPeople(page: String, completion: @escaping (Result<[Person], Error>) -> ())  {
         
-        if page == "1" {
-            self.url = url
-        } else {
-            self.url = "\(url)?page=\(page)"
+        var url = "https://swapi.dev/api/people/"
+        
+        if page != "1" {
+            url = "\(url)?page=\(page)"
         }
-    }
-    
-    func loadPerson(completion: @escaping (Result<[Person], Error>) -> ())  {
         
         AF.request(url).responseDecodable(of: PeopleList.self) { response in
             
@@ -33,7 +29,7 @@ final class StarWarsApi {
         }
     }
     
-    func loadPlanet(completion: @escaping (Result<Planet, Error>) -> ()) {
+    func loadPlanet(url: String, completion: @escaping (Result<Planet, Error>) -> ()) {
         
         AF.request(url).responseDecodable(of: Planet.self) { response in
             switch response.result {
@@ -44,6 +40,67 @@ final class StarWarsApi {
             }
         }
         
+    }
+    
+    func loadSpecies(url: String, completion: @escaping (Result<Species, Error>) -> ()) {
+        
+        AF.request(url).responseDecodable(of: Species.self) { response in
+            switch response.result {
+            case .success(let species):
+                completion(.success(species))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+        
+    }
+    
+    func loadFilm(url: String, completion: @escaping (Result<Film, Error>) -> ()) {
+        
+        AF.request(url).responseDecodable(of: Film.self) { response in
+            switch response.result {
+            case .success(let film):
+                completion(.success(film))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+        
+    }
+    
+    func loadPlanetAndSpecies(planetURL: String, speciesURL: String, completion: @escaping (Result<(Planet, Species), Error>) -> ()) {
+        
+        let group = DispatchGroup()
+
+        var planetResult: Result<Planet, Error>?
+        var speciesResult: Result<Species, Error>?
+
+        // Llamada a loadPlanet
+        group.enter()
+        self.loadPlanet(url: planetURL) { result in
+            planetResult = result
+            group.leave()
+        }
+
+        // Llamada a loadSpecies
+        group.enter()
+        self.loadSpecies(url: speciesURL) { result in
+            speciesResult = result
+            group.leave()
+        }
+        
+        group.notify(queue: .main) {
+                // Esperar a que ambas llamadas finalicen
+                switch (planetResult, speciesResult) {
+                case (.success(let planet), .success(let species)):
+                    completion(.success((planet, species)))
+                case (.failure(let error), _), (_, .failure(let error)):
+                    completion(.failure(error))
+                default:
+                    // Manejar cualquier otro caso
+                    break
+                }
+            }
     }
     
 }

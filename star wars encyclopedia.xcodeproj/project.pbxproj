@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C301EBC52B2C92C40083C1BB /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301EBC42B2C92C40083C1BB /* Species.swift */; };
+		C301EBC72B2C95F40083C1BB /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301EBC62B2C95F40083C1BB /* Films.swift */; };
 		C351E9F62B2AF2B400A3C42A /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C351E9F52B2AF2B400A3C42A /* Planets.swift */; };
 		C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503C92B1D04BB0077969C /* PagesView.swift */; };
 		C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C301EBC42B2C92C40083C1BB /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		C301EBC62B2C95F40083C1BB /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
 		C351E9F52B2AF2B400A3C42A /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		C39503C92B1D04BB0077969C /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAPI.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 			children = (
 				C3B22B882B1E4DD300D504C3 /* People.swift */,
 				C351E9F52B2AF2B400A3C42A /* Planets.swift */,
+				C301EBC42B2C92C40083C1BB /* Species.swift */,
+				C301EBC62B2C95F40083C1BB /* Films.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,9 +349,11 @@
 				C3C66A502B1E37B600AC4A65 /* UpperBarView.swift in Sources */,
 				C3BE7CE12B1BBD25008491CC /* BadgeView.swift in Sources */,
 				C3C66A4E2B1E355600AC4A65 /* DetailView.swift in Sources */,
+				C301EBC72B2C95F40083C1BB /* Films.swift in Sources */,
 				C3B22B892B1E4DD300D504C3 /* People.swift in Sources */,
 				C3FE7CB32B1A6642004DA4BD /* CharactersListView.swift in Sources */,
 				C3C66A4C2B1E354800AC4A65 /* CharacterDetailView.swift in Sources */,
+				C301EBC52B2C92C40083C1BB /* Species.swift in Sources */,
 				C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */,
 				C3C66A522B1E382100AC4A65 /* LowerBarView.swift in Sources */,
 				C3BE7CDF2B1BB1FE008491CC /* HeadingView.swift in Sources */,

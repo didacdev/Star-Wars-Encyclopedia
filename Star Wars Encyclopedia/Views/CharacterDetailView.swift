@@ -9,10 +9,12 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     
-    var person: Person
-    @State var planetName: String = ""
+    @State var person: Person
     @State var isPresented: Bool = false
     @State var attributes: [Attribute] = []
+    @State var planetName: String = ""
+    @State var speciesName: String = ""
+    @State var films: String = ""
     
     var body: some View {
         ZStack {
@@ -39,27 +41,27 @@ struct CharacterDetailView: View {
                             }
                             .onAppear() {
                                 
-                                StarWarsApi(page: "1",
-                                            url: person.homeworld
-                                ).loadPlanet { result in
-                                    
+                                StarWarsApi().loadPlanetAndSpecies(
+                                    planetURL: person.homeworld,
+                                    speciesURL: person.species.first ?? "https://swapi.dev/api/species/1/"
+                                ) { result in
                                     switch result {
-                                    case .success(let planet):
-                                        self.planetName = planet.name
-                                        print(planetName)
+                                    case .success(let (planet, species)):
+                                        planetName = planet.name
+                                        speciesName = species.name
                                     case .failure(let error):
                                         print(error)
                                         isPresented = true
                                     }
                                     
-                                    attributes.append(Attribute(name: "NAME", value: person.name))
-                                    attributes.append(Attribute(name: "BIRTH", value: person.birth_year))
-                                    attributes.append(Attribute(name: "GENRE", value: person.gender))
-                                    attributes.append(Attribute(name: "SPECIES", value: person.species))
-                                    attributes.append(Attribute(name: "PLANET", value: planetName))
-                                    attributes.append(Attribute(name: "HEIGHT", value: person.height))
-                                    attributes.append(Attribute(name: "FILMS", value: person.films))
+                                    self.attributes.append(Attribute(name: "NAME", value: person.name))
+                                    self.attributes.append(Attribute(name: "SPECIES", value: speciesName))
+                                    self.attributes.append(Attribute(name: "PLANET", value: planetName))
+                                    self.attributes.append(Attribute(name: "BIRTH", value: person.birth_year))
+                                    self.attributes.append(Attribute(name: "GENRE", value: person.gender))
+                                    self.attributes.append(Attribute(name: "HEIGHT", value: person.height))
                                 }
+                                
                             }
                             .listStyle(PlainListStyle())
                         }
@@ -98,7 +100,7 @@ struct CharacterDetailView: View {
         homeworld: "https://swapi.dev/api/planets/1/",
         films: [
             "https://swapi.dev/api/films/1/"],
-        species: ["https://swapi.dev/api/species/1/"],
+        species: [],
         starships: ["https://swapi.dev/api/starships/12/"],
         vehicles: ["https://swapi.dev/api/vehicles/14/"],
         url: "https://swapi.dev/api/people/1/",
