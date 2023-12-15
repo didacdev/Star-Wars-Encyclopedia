@@ -9,20 +9,20 @@ import Alamofire
 
 final class StarWarsApi {
     
-    private var page: String
+    private var url: String
     
-    init(paramenter: String) {
+    init(page: String, url: String) {
         
-        if paramenter == "1" {
-            self.page = ""
+        if page == "1" {
+            self.url = url
         } else {
-            self.page = "?page=\(paramenter)"
+            self.url = "\(url)?page=\(page)"
         }
     }
     
     func loadPerson(completion: @escaping (Result<[Person], Error>) -> ())  {
         
-        AF.request("https://swapi.dev/api/people/\(page)").responseDecodable(of: PeopleList.self) { response in
+        AF.request(url).responseDecodable(of: PeopleList.self) { response in
             
             switch response.result {
             case .success(let peopleList):
@@ -31,6 +31,19 @@ final class StarWarsApi {
                 completion(.failure(error))
             }
         }
+    }
+    
+    func loadPlanet(completion: @escaping (Result<Planet, Error>) -> ()) {
+        
+        AF.request(url).responseDecodable(of: Planet.self) { response in
+            switch response.result {
+            case .success(let planet):
+                completion(.success(planet))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+        
     }
     
 }

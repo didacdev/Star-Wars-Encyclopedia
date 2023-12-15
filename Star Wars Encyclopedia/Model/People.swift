@@ -33,3 +33,8 @@ struct Person: Decodable {
     
 }
 
+struct Attribute {
+    let name: String
+    let value: Any
+}
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C351E9F62B2AF2B400A3C42A /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C351E9F52B2AF2B400A3C42A /* Planets.swift */; };
 		C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503C92B1D04BB0077969C /* PagesView.swift */; };
 		C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */; };
 		C3B22B872B1E4D8700D504C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C3B22B862B1E4D8700D504C3 /* Alamofire */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C351E9F52B2AF2B400A3C42A /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
 		C39503C92B1D04BB0077969C /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
 		C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAPI.swift; sourceTree = "<group>"; };
 		C3B22B882B1E4DD300D504C3 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				C3B22B882B1E4DD300D504C3 /* People.swift */,
+				C351E9F52B2AF2B400A3C42A /* Planets.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				C3BE7CDF2B1BB1FE008491CC /* HeadingView.swift in Sources */,
 				C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */,
 				C3FE7CB12B1A6642004DA4BD /* star_wars_encyclopediaApp.swift in Sources */,
+				C351E9F62B2AF2B400A3C42A /* Planets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

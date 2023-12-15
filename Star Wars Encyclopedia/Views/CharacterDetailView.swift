@@ -10,6 +10,9 @@ import SwiftUI
 struct CharacterDetailView: View {
     
     var person: Person
+    @State var planetName: String = ""
+    @State var isPresented: Bool = false
+    @State var attributes: [Attribute] = []
     
     var body: some View {
         ZStack {
@@ -17,23 +20,60 @@ struct CharacterDetailView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
+                
                 Spacer()
                 BadgeView(person: person)
-                Spacer()
-                VStack (alignment: .leading, spacing: 20){
-                    UpperBarView()
-                    DetailView(text: "NAME: \(person.name)")
-                    DetailView(text: "BIRTH: \(person.birth_year)")
-                    DetailView(text: "GENRE: \(person.gender)")
-                    DetailView(text: "SPECIES: \(person.species)")
-                    DetailView(text: "PLANET: \(person.homeworld)")
-                    DetailView(text: "HEIGHT: \(person.height) cm")
-                    DetailView(text: "FILS: \(person.films)")
-                }
-                .padding()
-                Spacer()
                 
+                NavigationView {
+                    
+                    ZStack{
+                        Color("Background").edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        
+                        VStack (alignment: .leading, spacing: 20){
+                            
+                            UpperBarView()
+                            
+                            List (attributes, id: \.name) { attribute in
+                                DetailView(text: "\(attribute.name): \(attribute.value)")
+                                    .listRowBackground(Color("Background"))
+                            }
+                            .onAppear() {
+                                
+                                StarWarsApi(page: "1",
+                                            url: person.homeworld
+                                ).loadPlanet { result in
+                                    
+                                    switch result {
+                                    case .success(let planet):
+                                        self.planetName = planet.name
+                                        print(planetName)
+                                    case .failure(let error):
+                                        print(error)
+                                        isPresented = true
+                                    }
+                                    
+                                    attributes.append(Attribute(name: "NAME", value: person.name))
+                                    attributes.append(Attribute(name: "BIRTH", value: person.birth_year))
+                                    attributes.append(Attribute(name: "GENRE", value: person.gender))
+                                    attributes.append(Attribute(name: "SPECIES", value: person.species))
+                                    attributes.append(Attribute(name: "PLANET", value: planetName))
+                                    attributes.append(Attribute(name: "HEIGHT", value: person.height))
+                                    attributes.append(Attribute(name: "FILMS", value: person.films))
+                                }
+                            }
+                            .listStyle(PlainListStyle())
+                        }
+                        .padding()
+                    }
+                    
+                }
             }
+            .alert(isPresented: $isPresented, content: {
+                Alert(title: Text("Connection error"),
+                      message: Text("Star Wars Encyclopedia can't connect to the database"),
+                      dismissButton: Alert.Button.default(Text("Close"))
+                )
+            })
             .frame(
                 minWidth: 0,
                 maxWidth: .infinity,

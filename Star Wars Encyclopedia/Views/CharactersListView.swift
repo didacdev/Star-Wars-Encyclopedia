@@ -46,7 +46,9 @@ struct CharactersListView: View {
                             .frame(width: nil)
                             .onAppear() {
                                 
-                                StarWarsApi(paramenter: String(page)).loadPerson { result in
+                                StarWarsApi(page: String(page), 
+                                            url: "https://swapi.dev/api/people/"
+                                ).loadPerson { result in
                                     
                                     switch result {
                                     case .success(let peopleList):
@@ -56,8 +58,22 @@ struct CharactersListView: View {
                                         isPresented = true
                                     }
                                 }
+                                
+//                                StarWarsApi(page: "1",
+//                                            url: "https://swapi.dev/api/planets/1/"
+//                                ).loadPlanet { result in
+//                                    
+//                                    switch result {
+//                                    case .success(let planet):
+//                                        planetName = planet.name
+//                                    case .failure(let error):
+//                                        print(error)
+//                                        isPresented = true
+//                                    }
+//                                }
                             }
                                 .listStyle(PlainListStyle())
+                            
                             Spacer()
                             
                             PagesView(actualPage: String(page), page: $page, peopleList: $peopleList)
