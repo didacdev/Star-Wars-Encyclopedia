@@ -14,7 +14,7 @@ struct CharacterDetailView: View {
     @State var attributes: [Attribute] = []
     @State var planetName: String = ""
     @State var speciesName: String = ""
-    @State var films: String = ""
+    @State var films: [String] = []
     
     var body: some View {
         ZStack {
@@ -36,30 +36,33 @@ struct CharacterDetailView: View {
                             UpperBarView()
                             
                             List (attributes, id: \.name) { attribute in
-                                DetailView(text: "\(attribute.name): \(attribute.value)")
+                                DetailView(text: attribute.name, content: attribute.value)
                                     .listRowBackground(Color("Background"))
                             }
                             .onAppear() {
                                 
                                 StarWarsApi().loadPlanetAndSpecies(
                                     planetURL: person.homeworld,
-                                    speciesURL: person.species.first ?? "https://swapi.dev/api/species/1/"
+                                    speciesURL: person.species.first ?? "https://swapi.dev/api/species/1/",
+                                    filmsURLs: person.films
                                 ) { result in
                                     switch result {
-                                    case .success(let (planet, species)):
+                                    case .success(let (planet, species, films)):
                                         planetName = planet.name
                                         speciesName = species.name
+                                        self.films = films.map { "- Episode \($0.episode_id): \($0.title)" }
                                     case .failure(let error):
                                         print(error)
                                         isPresented = true
                                     }
                                     
-                                    self.attributes.append(Attribute(name: "NAME", value: person.name))
-                                    self.attributes.append(Attribute(name: "SPECIES", value: speciesName))
-                                    self.attributes.append(Attribute(name: "PLANET", value: planetName))
-                                    self.attributes.append(Attribute(name: "BIRTH", value: person.birth_year))
-                                    self.attributes.append(Attribute(name: "GENRE", value: person.gender))
-                                    self.attributes.append(Attribute(name: "HEIGHT", value: person.height))
+                                    self.attributes.append(Attribute(name: "NAME", value: [person.name]))
+                                    self.attributes.append(Attribute(name: "SPECIES", value: [speciesName]))
+                                    self.attributes.append(Attribute(name: "PLANET", value: [planetName]))
+                                    self.attributes.append(Attribute(name: "BIRTH", value: [person.birth_year]))
+                                    self.attributes.append(Attribute(name: "GENRE", value: [person.gender]))
+                                    self.attributes.append(Attribute(name: "HEIGHT", value: [person.height]))
+                                    self.attributes.append(Attribute(name: "FILMS", value: films))
                                 }
                                 
                             }
@@ -99,7 +102,8 @@ struct CharacterDetailView: View {
         skin_color: "Fair",
         homeworld: "https://swapi.dev/api/planets/1/",
         films: [
-            "https://swapi.dev/api/films/1/"],
+            "https://swapi.dev/api/films/1/",
+            "https://swapi.dev/api/films/2/"],
         species: [],
         starships: ["https://swapi.dev/api/starships/12/"],
         vehicles: ["https://swapi.dev/api/vehicles/14/"],

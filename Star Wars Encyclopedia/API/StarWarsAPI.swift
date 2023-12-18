@@ -68,32 +68,48 @@ final class StarWarsApi {
         
     }
     
-    func loadPlanetAndSpecies(planetURL: String, speciesURL: String, completion: @escaping (Result<(Planet, Species), Error>) -> ()) {
+    func loadPlanetAndSpecies(planetURL: String, speciesURL: String, filmsURLs: [String], completion: @escaping (Result<(Planet, Species, [Film]), Error>) -> ()) {
         
         let group = DispatchGroup()
 
         var planetResult: Result<Planet, Error>?
         var speciesResult: Result<Species, Error>?
-
-        // Llamada a loadPlanet
+        var films: [Film] = []
+        
+        // loadPlanet
         group.enter()
         self.loadPlanet(url: planetURL) { result in
             planetResult = result
             group.leave()
         }
 
-        // Llamada a loadSpecies
+        // loadSpecies
         group.enter()
         self.loadSpecies(url: speciesURL) { result in
             speciesResult = result
             group.leave()
         }
         
+        // loadFilm
+        for URL in filmsURLs {
+            group.enter()
+            self.loadFilm(url: URL) { result in
+                switch result {
+                case .success(let film):
+                    films.append(film)
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+                group.leave()
+            }
+        }
+        
+        
         group.notify(queue: .main) {
-                // Esperar a que ambas llamadas finalicen
+                // waiting for functions end
                 switch (planetResult, speciesResult) {
                 case (.success(let planet), .success(let species)):
-                    completion(.success((planet, species)))
+                    completion(.success((planet, species, films)))
                 case (.failure(let error), _), (_, .failure(let error)):
                     completion(.failure(error))
                 default:

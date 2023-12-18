@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct FilmsList: Decodable {
+    
+    let results: [Film]
+}
+
 struct Film: Decodable {
     
     let title: String

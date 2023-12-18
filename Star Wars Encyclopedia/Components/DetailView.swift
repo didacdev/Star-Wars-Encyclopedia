@@ -9,16 +9,28 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @State var text: String
+    var text: String
+    var content: [String]
     
     var body: some View {
-        Text(text)
-            .font(.custom("Raleway-Medium", size: 22))
-            .fontWeight(.bold)
-            .foregroundColor(.white)
+        HStack (alignment: .top){
+            Text("\(text): ")
+            VStack (alignment:.leading, spacing: 16){
+                
+                ForEach(content, id: \.hashValue) { item in
+                    Text(item)
+                }
+            }
+            
+            
+        }
+        .font(.custom("Raleway-Medium", size: 22))
+        .fontWeight(.bold)
+        .foregroundColor(.white)
+        
     }
 }
 
 #Preview {
-    DetailView(text: "SUB HEADING")
+    DetailView(text: "SUB HEADING", content: ["sub heading1", "sub heading2"])
 }
