@@ -10,12 +10,14 @@ import Foundation
 
 final class StarWarsApi {
     
-    func loadPeople(page: String, completion: @escaping (Result<[Person], Error>) -> ())  {
+    func loadPeople(searchText: String = "", page: String = "1", completion: @escaping (Result<[Person], Error>) -> ())  {
         
         var url = "https://swapi.dev/api/people/"
         
         if page != "1" {
             url = "\(url)?page=\(page)"
+        } else if searchText != ""{
+            url = "\(url)?search=\(searchText)"
         }
         
         AF.request(url).responseDecodable(of: PeopleList.self) { response in
@@ -68,7 +70,7 @@ final class StarWarsApi {
         
     }
     
-    func loadPlanetAndSpecies(planetURL: String, speciesURL: String, filmsURLs: [String], completion: @escaping (Result<(Planet, Species, [Film]), Error>) -> ()) {
+    func loadPlanetAndSpeciesAndFilms(planetURL: String, speciesURL: String, filmsURLs: [String], completion: @escaping (Result<(Planet, Species, [Film]), Error>) -> ()) {
         
         let group = DispatchGroup()
 

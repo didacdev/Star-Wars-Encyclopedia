@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct CharactersListView: View {
-    
+    @State  var searchText: String = ""
     @State var peopleList: [Person] = []
     @State var page: Int = 1
-    @State var isPresented: Bool = false
+    @State  var isPresented: Bool = false
+    @State private var searchDebounceTimer: Timer?
     
     var body: some View {
         
@@ -22,12 +23,11 @@ struct CharactersListView: View {
             
             VStack() {
                 HeadingView()
-                Spacer()
                 
                 NavigationView {
-                    ZStack{
+                    ZStack {
                         Color("Background")
-                                    .edgesIgnoringSafeArea(.all)
+                            .edgesIgnoringSafeArea(.all)
                         
                         VStack {
                             List(peopleList, id: \.name) { person in
@@ -44,20 +44,42 @@ struct CharactersListView: View {
                                 .listRowBackground(Color("Background"))
                             }
                             .frame(width: nil)
-                            .onAppear() {
-                                
-                                StarWarsApi().loadPeople(page: String(page)) { result in
+                            .searchable(
+                                text: $searchText,
+                                placement: .navigationBarDrawer(displayMode: .automatic),
+                                prompt: "Search character"
+                            )
+                            .onChange(of: searchText) {
+                                searchDebounceTimer?.invalidate()
+                                searchDebounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
                                     
-                                    switch result {
-                                    case .success(let peopleList):
-                                        self.peopleList = peopleList
-                                    case .failure(let error):
-                                        print(error)
-                                        isPresented = true
+                                    StarWarsApi().loadPeople(searchText: searchText) { result in
+                                        switch result {
+                                        case .success(let peopleList):
+                                            self.peopleList = peopleList
+                                        case .failure(let error):
+                                            print(error)
+                                            isPresented = true
+                                        }
                                     }
                                 }
                             }
-                                .listStyle(PlainListStyle())
+                            .onAppear() {
+                                
+                                if searchText.isEmpty {
+                                    StarWarsApi().loadPeople(page: String(page)) { result in
+                                        
+                                        switch result {
+                                        case .success(let peopleList):
+                                            self.peopleList = peopleList
+                                        case .failure(let error):
+                                            print(error)
+                                            isPresented = true
+                                        }
+                                    }
+                                }
+                            }
+                            .listStyle(PlainListStyle())
                             
                             Spacer()
                             

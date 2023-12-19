@@ -41,7 +41,7 @@ struct CharacterDetailView: View {
                             }
                             .onAppear() {
                                 
-                                StarWarsApi().loadPlanetAndSpecies(
+                                StarWarsApi().loadPlanetAndSpeciesAndFilms(
                                     planetURL: person.homeworld,
                                     speciesURL: person.species.first ?? "https://swapi.dev/api/species/1/",
                                     filmsURLs: person.films
