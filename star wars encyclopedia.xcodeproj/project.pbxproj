@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C301EBC52B2C92C40083C1BB /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301EBC42B2C92C40083C1BB /* Species.swift */; };
 		C301EBC72B2C95F40083C1BB /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301EBC62B2C95F40083C1BB /* Films.swift */; };
+		C33D8C5F2B335E0C00549730 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = C33D8C5E2B335E0C00549730 /* SkeletonView */; };
 		C351E9F62B2AF2B400A3C42A /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C351E9F52B2AF2B400A3C42A /* Planets.swift */; };
 		C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503C92B1D04BB0077969C /* PagesView.swift */; };
 		C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */; };
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C33D8C5F2B335E0C00549730 /* SkeletonView in Frameworks */,
 				C3B22B872B1E4D8700D504C3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +225,7 @@
 			name = "star wars encyclopedia";
 			packageProductDependencies = (
 				C3B22B862B1E4D8700D504C3 /* Alamofire */,
+				C33D8C5E2B335E0C00549730 /* SkeletonView */,
 			);
 			productName = "star wars encyclopedia";
 			productReference = C3FE7CAD2B1A6642004DA4BD /* star wars encyclopedia.app */;
@@ -298,6 +301,7 @@
 			mainGroup = C3FE7CA42B1A6642004DA4BD;
 			packageReferences = (
 				C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C33D8C5D2B335E0C00549730 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = C3FE7CAE2B1A6642004DA4BD /* Products */;
 			projectDirPath = "";
@@ -686,6 +690,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C33D8C5D2B335E0C00549730 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.30.4;
+			};
+		};
 		C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -697,6 +709,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C33D8C5E2B335E0C00549730 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C33D8C5D2B335E0C00549730 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
 		C3B22B862B1E4D8700D504C3 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */;

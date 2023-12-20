@@ -12,6 +12,8 @@ struct PagesView: View {
     let actualPage: String
     @Binding var page: Int
     @Binding var peopleList: [Person]
+    @Binding var isLoading: Bool
+    @Binding var isPresented: Bool
     
     var body: some View {
         HStack {
@@ -75,18 +77,23 @@ struct PagesView: View {
     }
     
     func getPeople() {
+        isLoading = true
+        
         StarWarsApi().loadPeople(page: String(page)) { result in
             
             switch result {
             case .success(let peopleList):
+                isLoading = false
                 self.peopleList = peopleList
             case .failure(let error):
                 print(error)
+                isLoading = false
+                isPresented = true
             }
         }
     }
 }
 
 #Preview {
-    PagesView(actualPage: "1", page: .constant(1), peopleList: .constant([]))
+    PagesView(actualPage: "1", page: .constant(1), peopleList: .constant([]), isLoading: .constant(false), isPresented: .constant(false))
 }

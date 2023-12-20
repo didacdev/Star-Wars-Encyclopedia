@@ -14,6 +14,9 @@ struct CharactersListView: View {
     @State var page: Int = 1
     @State  var isPresented: Bool = false
     @State private var searchDebounceTimer: Timer?
+    @State var isLoading: Bool = false
+
+    
     
     var body: some View {
         
@@ -30,60 +33,78 @@ struct CharactersListView: View {
                             .edgesIgnoringSafeArea(.all)
                         
                         VStack {
-                            List(peopleList, id: \.name) { person in
-                                
-                                HStack {
-                                    BadgeView(person: person)
-                                }
-                                .overlay(
-                                    NavigationLink(destination: CharacterDetailView(person: person)) {
-                                        EmptyView()
-                                    }
-                                        .padding()
-                                )
-                                .listRowBackground(Color("Background"))
-                            }
-                            .frame(width: nil)
-                            .searchable(
-                                text: $searchText,
-                                placement: .navigationBarDrawer(displayMode: .automatic),
-                                prompt: "Search character"
-                            )
-                            .onChange(of: searchText) {
-                                searchDebounceTimer?.invalidate()
-                                searchDebounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
+                            
+                            if isLoading {
+                                Spacer()
+                                ProgressView()
+                                            .scaleEffect(2)
+                                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                            } else {
+                                List(peopleList, id: \.name) { person in
                                     
-                                    StarWarsApi().loadPeople(searchText: searchText) { result in
-                                        switch result {
-                                        case .success(let peopleList):
-                                            self.peopleList = peopleList
-                                        case .failure(let error):
-                                            print(error)
-                                            isPresented = true
-                                        }
+                                    HStack {
+                                        BadgeView(person: person)
                                     }
+                                    .overlay(
+                                        NavigationLink(destination: CharacterDetailView(person: person)) {
+                                            EmptyView()
+                                        }
+                                            .padding()
+                                    )
+                                    .listRowBackground(Color("Background"))
                                 }
-                            }
-                            .onAppear() {
-                                
-                                if searchText.isEmpty {
-                                    StarWarsApi().loadPeople(page: String(page)) { result in
+                                .frame(width: nil)
+                                .searchable(
+                                    text: $searchText,
+                                    placement: .navigationBarDrawer(displayMode: .always),
+                                    prompt: "Search character"
+                                )
+                                .onChange(of: searchText) {
+                                    searchDebounceTimer?.invalidate()
+                                    searchDebounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
                                         
-                                        switch result {
-                                        case .success(let peopleList):
-                                            self.peopleList = peopleList
-                                        case .failure(let error):
-                                            print(error)
-                                            isPresented = true
+                                        isLoading = true
+                                        
+                                        StarWarsApi().loadPeople(searchText: searchText) { result in
+                                            switch result {
+                                            case .success(let peopleList):
+                                                isLoading = false
+                                                self.peopleList = peopleList
+                                            case .failure(let error):
+                                                isLoading = false
+                                                print(error)
+                                                isPresented = true
+                                            }
                                         }
                                     }
                                 }
+                                .onAppear() {
+                                    
+                                    if searchText.isEmpty && peopleList.isEmpty {
+                                        
+                                        isLoading = true
+                                        
+                                        StarWarsApi().loadPeople(page: String(page)) { result in
+                                            
+                                            switch result {
+                                            case .success(let peopleList):
+                                                isLoading = false
+                                                self.peopleList = peopleList
+                                            case .failure(let error):
+                                                print(error)
+                                                isLoading = false
+                                                isPresented = true
+                                            }
+                                        }
+                                    }
+                                }
+                                .listStyle(PlainListStyle())
                             }
-                            .listStyle(PlainListStyle())
+                            
                             
                             Spacer()
                             
-                            PagesView(actualPage: String(page), page: $page, peopleList: $peopleList)
+                            PagesView(actualPage: String(page), page: $page, peopleList: $peopleList, isLoading: $isLoading, isPresented: $isPresented)
                                 .padding(.top)
                         }
                     }
