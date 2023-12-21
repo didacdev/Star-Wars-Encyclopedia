@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C301EBC52B2C92C40083C1BB /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301EBC42B2C92C40083C1BB /* Species.swift */; };
+		C301EBC72B2C95F40083C1BB /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = C301EBC62B2C95F40083C1BB /* Films.swift */; };
+		C351E9F62B2AF2B400A3C42A /* Planets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C351E9F52B2AF2B400A3C42A /* Planets.swift */; };
+		C35385EF2B347AA4000D622C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C35385EE2B347AA4000D622C /* Launch Screen.storyboard */; };
+		C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39503C92B1D04BB0077969C /* PagesView.swift */; };
+		C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */; };
+		C3B22B872B1E4D8700D504C3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C3B22B862B1E4D8700D504C3 /* Alamofire */; };
+		C3B22B892B1E4DD300D504C3 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B22B882B1E4DD300D504C3 /* People.swift */; };
 		C3BE7CD02B1B8A49008491CC /* Aurek-Besh.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CCF2B1B8A49008491CC /* Aurek-Besh.ttf */; };
 		C3BE7CD52B1B967D008491CC /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CD42B1B967D008491CC /* Poppins-ExtraBold.ttf */; };
 		C3BE7CD72B1B9693008491CC /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CD62B1B9693008491CC /* Poppins-Regular.ttf */; };
 		C3BE7CD92B1B97BE008491CC /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CD82B1B97BE008491CC /* Raleway-ExtraLight.ttf */; };
 		C3BE7CDB2B1B97CD008491CC /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3BE7CDA2B1B97CC008491CC /* Raleway-Medium.ttf */; };
 		C3BE7CDF2B1BB1FE008491CC /* HeadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BE7CDE2B1BB1FE008491CC /* HeadingView.swift */; };
+		C3BE7CE12B1BBD25008491CC /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BE7CE02B1BBD25008491CC /* BadgeView.swift */; };
+		C3C66A4C2B1E354800AC4A65 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C66A4B2B1E354800AC4A65 /* CharacterDetailView.swift */; };
+		C3C66A4E2B1E355600AC4A65 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C66A4D2B1E355600AC4A65 /* DetailView.swift */; };
+		C3C66A502B1E37B600AC4A65 /* UpperBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C66A4F2B1E37B600AC4A65 /* UpperBarView.swift */; };
+		C3C66A522B1E382100AC4A65 /* LowerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C66A512B1E382100AC4A65 /* LowerBarView.swift */; };
 		C3FE7CB12B1A6642004DA4BD /* star_wars_encyclopediaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CB02B1A6642004DA4BD /* star_wars_encyclopediaApp.swift */; };
-		C3FE7CB32B1A6642004DA4BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CB22B1A6642004DA4BD /* ContentView.swift */; };
+		C3FE7CB32B1A6642004DA4BD /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CB22B1A6642004DA4BD /* CharactersListView.swift */; };
 		C3FE7CB52B1A6645004DA4BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3FE7CB42B1A6645004DA4BD /* Assets.xcassets */; };
 		C3FE7CB82B1A6645004DA4BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3FE7CB72B1A6645004DA4BD /* Preview Assets.xcassets */; };
-		C3FE7CC22B1A6646004DA4BD /* star_wars_encyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CC12B1A6646004DA4BD /* star_wars_encyclopediaTests.swift */; };
-		C3FE7CCC2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CCB2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift */; };
-		C3FE7CCE2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FE7CCD2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C301EBC42B2C92C40083C1BB /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		C301EBC62B2C95F40083C1BB /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
+		C351E9F52B2AF2B400A3C42A /* Planets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planets.swift; sourceTree = "<group>"; };
+		C35385EE2B347AA4000D622C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C39503C92B1D04BB0077969C /* PagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesView.swift; sourceTree = "<group>"; };
+		C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAPI.swift; sourceTree = "<group>"; };
+		C3B22B882B1E4DD300D504C3 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		C3BE7CCF2B1B8A49008491CC /* Aurek-Besh.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aurek-Besh.ttf"; sourceTree = "<group>"; };
 		C3BE7CD32B1B8E81008491CC /* star-wars-encyclopedia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "star-wars-encyclopedia-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C3BE7CD42B1B967D008491CC /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -47,16 +64,18 @@
 		C3BE7CD82B1B97BE008491CC /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
 		C3BE7CDA2B1B97CC008491CC /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		C3BE7CDE2B1BB1FE008491CC /* HeadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingView.swift; sourceTree = "<group>"; };
+		C3BE7CE02B1BBD25008491CC /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
+		C3C66A4B2B1E354800AC4A65 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		C3C66A4D2B1E355600AC4A65 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C3C66A4F2B1E37B600AC4A65 /* UpperBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpperBarView.swift; sourceTree = "<group>"; };
+		C3C66A512B1E382100AC4A65 /* LowerBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerBarView.swift; sourceTree = "<group>"; };
 		C3FE7CAD2B1A6642004DA4BD /* star wars encyclopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "star wars encyclopedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3FE7CB02B1A6642004DA4BD /* star_wars_encyclopediaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = star_wars_encyclopediaApp.swift; sourceTree = "<group>"; };
-		C3FE7CB22B1A6642004DA4BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C3FE7CB22B1A6642004DA4BD /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
 		C3FE7CB42B1A6645004DA4BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3FE7CB72B1A6645004DA4BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3FE7CBD2B1A6646004DA4BD /* star wars encyclopediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "star wars encyclopediaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3FE7CC12B1A6646004DA4BD /* star_wars_encyclopediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = star_wars_encyclopediaTests.swift; sourceTree = "<group>"; };
 		C3FE7CC72B1A6646004DA4BD /* star wars encyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "star wars encyclopediaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3FE7CCB2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = star_wars_encyclopediaUITests.swift; sourceTree = "<group>"; };
-		C3FE7CCD2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = star_wars_encyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3B22B872B1E4D8700D504C3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +127,8 @@
 		C3BE7CDC2B1BB164008491CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C3FE7CB22B1A6642004DA4BD /* ContentView.swift */,
+				C3FE7CB22B1A6642004DA4BD /* CharactersListView.swift */,
+				C3C66A4B2B1E354800AC4A65 /* CharacterDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,17 +137,39 @@
 			isa = PBXGroup;
 			children = (
 				C3BE7CDE2B1BB1FE008491CC /* HeadingView.swift */,
+				C3BE7CE02B1BBD25008491CC /* BadgeView.swift */,
+				C39503C92B1D04BB0077969C /* PagesView.swift */,
+				C3C66A4D2B1E355600AC4A65 /* DetailView.swift */,
+				C3C66A4F2B1E37B600AC4A65 /* UpperBarView.swift */,
+				C3C66A512B1E382100AC4A65 /* LowerBarView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C3C66A532B1E3CB300AC4A65 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C3B22B832B1E4D7700D504C3 /* StarWarsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		C3C66A542B1E3CBC00AC4A65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3B22B882B1E4DD300D504C3 /* People.swift */,
+				C351E9F52B2AF2B400A3C42A /* Planets.swift */,
+				C301EBC42B2C92C40083C1BB /* Species.swift */,
+				C301EBC62B2C95F40083C1BB /* Films.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C3FE7CA42B1A6642004DA4BD = {
 			isa = PBXGroup;
 			children = (
-				C3FE7CAF2B1A6642004DA4BD /* star wars encyclopedia */,
+				C3FE7CAF2B1A6642004DA4BD /* Star Wars Encyclopedia */,
 				C3BE7CD32B1B8E81008491CC /* star-wars-encyclopedia-Info.plist */,
-				C3FE7CC02B1A6646004DA4BD /* star wars encyclopediaTests */,
-				C3FE7CCA2B1A6646004DA4BD /* star wars encyclopediaUITests */,
 				C3FE7CAE2B1A6642004DA4BD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,17 +184,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C3FE7CAF2B1A6642004DA4BD /* star wars encyclopedia */ = {
+		C3FE7CAF2B1A6642004DA4BD /* Star Wars Encyclopedia */ = {
 			isa = PBXGroup;
 			children = (
 				C3FE7CB02B1A6642004DA4BD /* star_wars_encyclopediaApp.swift */,
 				C3BE7CDC2B1BB164008491CC /* Views */,
 				C3BE7CDD2B1BB1B4008491CC /* Components */,
-				C3FE7CB42B1A6645004DA4BD /* Assets.xcassets */,
+				C3C66A542B1E3CBC00AC4A65 /* Model */,
+				C3C66A532B1E3CB300AC4A65 /* API */,
 				C3BE7CCD2B1B89FB008491CC /* Resources */,
+				C3FE7CB42B1A6645004DA4BD /* Assets.xcassets */,
 				C3FE7CB62B1A6645004DA4BD /* Preview Content */,
+				C35385EE2B347AA4000D622C /* Launch Screen.storyboard */,
 			);
-			path = "star wars encyclopedia";
+			path = "Star Wars Encyclopedia";
 			sourceTree = "<group>";
 		};
 		C3FE7CB62B1A6645004DA4BD /* Preview Content */ = {
@@ -160,23 +206,6 @@
 				C3FE7CB72B1A6645004DA4BD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		C3FE7CC02B1A6646004DA4BD /* star wars encyclopediaTests */ = {
-			isa = PBXGroup;
-			children = (
-				C3FE7CC12B1A6646004DA4BD /* star_wars_encyclopediaTests.swift */,
-			);
-			path = "star wars encyclopediaTests";
-			sourceTree = "<group>";
-		};
-		C3FE7CCA2B1A6646004DA4BD /* star wars encyclopediaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				C3FE7CCB2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift */,
-				C3FE7CCD2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift */,
-			);
-			path = "star wars encyclopediaUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +224,9 @@
 			dependencies = (
 			);
 			name = "star wars encyclopedia";
+			packageProductDependencies = (
+				C3B22B862B1E4D8700D504C3 /* Alamofire */,
+			);
 			productName = "star wars encyclopedia";
 			productReference = C3FE7CAD2B1A6642004DA4BD /* star wars encyclopedia.app */;
 			productType = "com.apple.product-type.application";
@@ -258,7 +290,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C3FE7CA82B1A6642004DA4BD /* Build configuration list for PBXProject "star wars encyclopedia" */;
+			buildConfigurationList = C3FE7CA82B1A6642004DA4BD /* Build configuration list for PBXProject "Star Wars Encyclopedia" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -267,6 +299,9 @@
 				Base,
 			);
 			mainGroup = C3FE7CA42B1A6642004DA4BD;
+			packageReferences = (
+				C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C3FE7CAE2B1A6642004DA4BD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,6 +320,7 @@
 			files = (
 				C3BE7CDB2B1B97CD008491CC /* Raleway-Medium.ttf in Resources */,
 				C3BE7CD52B1B967D008491CC /* Poppins-ExtraBold.ttf in Resources */,
+				C35385EF2B347AA4000D622C /* Launch Screen.storyboard in Resources */,
 				C3BE7CD02B1B8A49008491CC /* Aurek-Besh.ttf in Resources */,
 				C3BE7CD92B1B97BE008491CC /* Raleway-ExtraLight.ttf in Resources */,
 				C3FE7CB82B1A6645004DA4BD /* Preview Assets.xcassets in Resources */,
@@ -314,9 +350,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3FE7CB32B1A6642004DA4BD /* ContentView.swift in Sources */,
+				C3C66A502B1E37B600AC4A65 /* UpperBarView.swift in Sources */,
+				C3BE7CE12B1BBD25008491CC /* BadgeView.swift in Sources */,
+				C3C66A4E2B1E355600AC4A65 /* DetailView.swift in Sources */,
+				C301EBC72B2C95F40083C1BB /* Films.swift in Sources */,
+				C3B22B892B1E4DD300D504C3 /* People.swift in Sources */,
+				C3FE7CB32B1A6642004DA4BD /* CharactersListView.swift in Sources */,
+				C3C66A4C2B1E354800AC4A65 /* CharacterDetailView.swift in Sources */,
+				C301EBC52B2C92C40083C1BB /* Species.swift in Sources */,
+				C3B22B842B1E4D7700D504C3 /* StarWarsAPI.swift in Sources */,
+				C3C66A522B1E382100AC4A65 /* LowerBarView.swift in Sources */,
 				C3BE7CDF2B1BB1FE008491CC /* HeadingView.swift in Sources */,
+				C39503CA2B1D04BB0077969C /* PagesView.swift in Sources */,
 				C3FE7CB12B1A6642004DA4BD /* star_wars_encyclopediaApp.swift in Sources */,
+				C351E9F62B2AF2B400A3C42A /* Planets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3FE7CC22B1A6646004DA4BD /* star_wars_encyclopediaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,8 +378,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3FE7CCC2B1A6646004DA4BD /* star_wars_encyclopediaUITests.swift in Sources */,
-				C3FE7CCE2B1A6646004DA4BD /* star_wars_encyclopediaUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -462,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -477,15 +521,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"star wars encyclopedia/Preview Content\"";
+				DEVELOPMENT_TEAM = U83AYT842T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "star-wars-encyclopedia-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,9 +544,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.didacdev.star-wars-encyclopedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -506,15 +558,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"star wars encyclopedia/Preview Content\"";
+				DEVELOPMENT_TEAM = U83AYT842T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "star-wars-encyclopedia-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Star Wars";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,9 +581,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.didacdev.star-wars-encyclopedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -605,7 +665,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C3FE7CA82B1A6642004DA4BD /* Build configuration list for PBXProject "star wars encyclopedia" */ = {
+		C3FE7CA82B1A6642004DA4BD /* Build configuration list for PBXProject "Star Wars Encyclopedia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3FE7CCF2B1A6646004DA4BD /* Debug */,
@@ -642,6 +702,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C3B22B862B1E4D8700D504C3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3B22B852B1E4D8700D504C3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C3FE7CA52B1A6642004DA4BD /* Project object */;
 }
