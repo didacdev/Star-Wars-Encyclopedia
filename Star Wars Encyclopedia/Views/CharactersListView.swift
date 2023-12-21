@@ -77,7 +77,9 @@ struct CharactersListView: View {
                                     searchDebounceTimer?.invalidate()
                                     searchDebounceTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { _ in
                                         
-                                        isLoading = true
+                                        if searchText.isEmpty {
+                                            isLoading = true
+                                        }
                                         
                                         StarWarsApi().loadPeople(searchText: searchText) { result in
                                             switch result {
