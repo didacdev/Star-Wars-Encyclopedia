@@ -23,7 +23,7 @@ struct BadgeView: View {
                     maxWidth: .infinity,
                     alignment: .leading
                 )
-                
+            
             Text(person.name)
                 .foregroundColor(Color.subheading)
                 .font(.custom("Aurek-Besh", size: 10))
@@ -32,7 +32,7 @@ struct BadgeView: View {
                     maxWidth: .infinity,
                     alignment: .leading
                 )
-                
+            
             LowerBarView()
         }
         .listRowBackground(Color("Background"))
@@ -62,4 +62,4 @@ struct BadgeView: View {
         edited: "2014-12-10T13:52:43.172000Z"
     ))
 }
-    
+

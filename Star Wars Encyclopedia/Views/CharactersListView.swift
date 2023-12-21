@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+let coloredNavAppearance = UINavigationBarAppearance()
+
 struct CharactersListView: View {
     @State  var searchText: String = ""
     @State var peopleList: [Person] = []
@@ -15,8 +17,16 @@ struct CharactersListView: View {
     @State  var isPresented: Bool = false
     @State private var searchDebounceTimer: Timer?
     @State var isLoading: Bool = false
-
     
+    // Init background search field
+    init() {
+        
+        coloredNavAppearance.backgroundColor = UIColor(named: "Background")
+        
+        UINavigationBar.appearance().standardAppearance = coloredNavAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredNavAppearance
+        
+    }
     
     var body: some View {
         
@@ -25,10 +35,13 @@ struct CharactersListView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack() {
+                
                 HeadingView()
                 
                 NavigationView {
+                    
                     ZStack {
+                        
                         Color("Background")
                             .edgesIgnoringSafeArea(.all)
                         
@@ -37,9 +50,10 @@ struct CharactersListView: View {
                             if isLoading {
                                 Spacer()
                                 ProgressView()
-                                            .scaleEffect(2)
-                                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                    .scaleEffect(2)
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
                             } else {
+                                
                                 List(peopleList, id: \.name) { person in
                                     
                                     HStack {
@@ -101,7 +115,6 @@ struct CharactersListView: View {
                                 .listStyle(PlainListStyle())
                             }
                             
-                            
                             Spacer()
                             
                             PagesView(actualPage: String(page), page: $page, peopleList: $peopleList, isLoading: $isLoading, isPresented: $isPresented)
@@ -124,7 +137,6 @@ struct CharactersListView: View {
                 alignment: .topLeading
             )
         }
-        
     }
 }
 

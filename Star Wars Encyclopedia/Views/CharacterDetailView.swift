@@ -38,8 +38,8 @@ struct CharacterDetailView: View {
                             if isLoading {
                                 Spacer()
                                 ProgressView()
-                                            .scaleEffect(2)
-                                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                                    .scaleEffect(2)
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                 Spacer()
                             } else {
                                 List (attributes, id: \.name) { attribute in
@@ -99,7 +99,7 @@ struct CharacterDetailView: View {
                 minHeight: 0,
                 maxHeight: .infinity,
                 alignment: .topLeading
-                )
+            )
         }
     }
 }

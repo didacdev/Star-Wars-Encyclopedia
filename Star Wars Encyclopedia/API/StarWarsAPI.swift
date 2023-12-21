@@ -5,8 +5,8 @@
 //  Created by Diego Sánchez on 4/12/23.
 //
 
-import Alamofire
 import Foundation
+import Alamofire
 
 final class StarWarsApi {
     
@@ -73,7 +73,7 @@ final class StarWarsApi {
     func loadPlanetAndSpeciesAndFilms(planetURL: String, speciesURL: String, filmsURLs: [String], completion: @escaping (Result<(Planet, Species, [Film]), Error>) -> ()) {
         
         let group = DispatchGroup()
-
+        
         var planetResult: Result<Planet, Error>?
         var speciesResult: Result<Species, Error>?
         var films: [Film] = []
@@ -84,7 +84,7 @@ final class StarWarsApi {
             planetResult = result
             group.leave()
         }
-
+        
         // loadSpecies
         group.enter()
         self.loadSpecies(url: speciesURL) { result in
@@ -108,17 +108,17 @@ final class StarWarsApi {
         
         
         group.notify(queue: .main) {
-                // waiting for functions end
-                switch (planetResult, speciesResult) {
-                case (.success(let planet), .success(let species)):
-                    completion(.success((planet, species, films)))
-                case (.failure(let error), _), (_, .failure(let error)):
-                    completion(.failure(error))
-                default:
-                    // Manejar cualquier otro caso
-                    break
-                }
+            // waiting for functions end
+            switch (planetResult, speciesResult) {
+            case (.success(let planet), .success(let species)):
+                completion(.success((planet, species, films)))
+            case (.failure(let error), _), (_, .failure(let error)):
+                completion(.failure(error))
+            default:
+                // Manejar cualquier otro caso
+                break
             }
+        }
     }
     
 }
