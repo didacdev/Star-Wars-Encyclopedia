@@ -121,9 +121,13 @@ struct CharactersListView: View {
                             
                             PagesView(actualPage: String(page), page: $page, peopleList: $peopleList, isLoading: $isLoading, isPresented: $isPresented)
                                 .padding(.top)
+                                
                         }
+                        .ignoresSafeArea(.keyboard)
+                        
                     }
                 }
+               
             }
             .alert(isPresented: $isPresented, content: {
                 Alert(title: Text("Connection error"),
@@ -131,13 +135,6 @@ struct CharactersListView: View {
                       dismissButton: Alert.Button.default(Text("Close"))
                 )
             })
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading
-            )
         }
     }
 }
