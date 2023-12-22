@@ -79,17 +79,29 @@ struct CharactersListView: View {
                                         
                                         if searchText.isEmpty {
                                             isLoading = true
-                                        }
-                                        
-                                        StarWarsApi().loadPeople(searchText: searchText) { result in
-                                            switch result {
-                                            case .success(let peopleList):
-                                                isLoading = false
-                                                self.peopleList = peopleList
-                                            case .failure(let error):
-                                                isLoading = false
-                                                print(error)
-                                                isPresented = true
+                                            
+                                            StarWarsApi().loadPeople(page: String(page)) { result in
+                                                switch result {
+                                                case .success(let peopleList):
+                                                    isLoading = false
+                                                    self.peopleList = peopleList
+                                                case .failure(let error):
+                                                    isLoading = false
+                                                    print(error)
+                                                    isPresented = true
+                                                }
+                                            }
+                                        } else {
+                                            StarWarsApi().loadPeople(searchText: searchText) { result in
+                                                switch result {
+                                                case .success(let peopleList):
+                                                    isLoading = false
+                                                    self.peopleList = peopleList
+                                                case .failure(let error):
+                                                    isLoading = false
+                                                    print(error)
+                                                    isPresented = true
+                                                }
                                             }
                                         }
                                     }
@@ -119,15 +131,20 @@ struct CharactersListView: View {
                             
                             Spacer()
                             
-                            PagesView(actualPage: String(page), page: $page, peopleList: $peopleList, isLoading: $isLoading, isPresented: $isPresented)
-                                .padding(.top)
-                                
+                            PagesView(
+                                actualPage: String(page),
+                                page: $page,
+                                peopleList: $peopleList,
+                                isLoading: $isLoading,
+                                isPresented: $isPresented,
+                                searchText: $searchText
+                            )
+                            .padding(.top)
+                            
                         }
                         .ignoresSafeArea(.keyboard)
-                        
                     }
                 }
-               
             }
             .alert(isPresented: $isPresented, content: {
                 Alert(title: Text("Connection error"),
