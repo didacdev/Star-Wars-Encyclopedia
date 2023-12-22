@@ -14,6 +14,7 @@ struct PagesView: View {
     @Binding var peopleList: [Person]
     @Binding var isLoading: Bool
     @Binding var isPresented: Bool
+    @Binding var searchText: String
     
     var body: some View {
         HStack {
@@ -22,7 +23,7 @@ struct PagesView: View {
                 if page > 1 {
                     
                     page -= 1
-                    
+                    searchText = ""
                     getPeople()
                 }
                 
@@ -52,8 +53,10 @@ struct PagesView: View {
                 
                 if page < 9 {
                     page += 1
+                    searchText = ""
                     getPeople()
                 }
+                
                 
             } label: {
                 Text("Next")
@@ -95,5 +98,13 @@ struct PagesView: View {
 }
 
 #Preview {
-    PagesView(actualPage: "1", page: .constant(1), peopleList: .constant([]), isLoading: .constant(false), isPresented: .constant(false))
+    PagesView(
+        actualPage: "1",
+        page: .constant(1),
+        peopleList: .constant([]),
+        isLoading: .constant(false),
+        isPresented: .constant(false),
+        searchText: .constant("")
+    )
 }
+
