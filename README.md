@@ -12,7 +12,7 @@ Esta es una aplicación de la Enciclopedia de Star Wars desarrollada en Swift ut
 ## Capturas
 <div style="display: flex; justify-content: space-around">
     <img src="img/shot1.png" alt="Main view" width="40%" style="border-radius: 1rem">
-    <img src="img/shot2.png" alt="Detail view" width="40%" style="border-radius: 1rem">
+    <img src="img/shot4.png" alt="Detail view" width="40%" style="border-radius: 1rem">
 </div>
 
 
