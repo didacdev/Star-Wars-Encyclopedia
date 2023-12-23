@@ -17,9 +17,11 @@ struct HeadingView: View {
             Text("CHARACTERS")
                 .font(.custom("Poppins-ExtraBold", size: 35))
                 .foregroundColor(Color.heading)
+                .accessibilityAddTraits(.isHeader)
             Text("Star Wars characters")
                 .font(.custom("Aurek-Besh", size: 8))
                 .foregroundColor(Color.subheading)
+                .accessibilityHint("Header in Aurek-Besh font")
         }
         .padding()
         .frame(

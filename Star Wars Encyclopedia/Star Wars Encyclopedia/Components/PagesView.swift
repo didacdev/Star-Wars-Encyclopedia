@@ -32,12 +32,16 @@ struct PagesView: View {
                     .font(.custom("Raleway-Medium", size: 24))
                     .fontWeight(.medium)
                     .foregroundColor(.bar)
+                    .accessibilityAddTraits(.isButton)
             }
             .frame(
                 width: 90,
                 height: 43
             )
             .background(Color.background, in: RoundedRectangle(cornerRadius: 40))
+            .accessibilityLabel("Back")
+            .accessibilityHint("Go back")
+            
             
             Text(actualPage)
                 .font(.custom("Raleway-Medium", size: 24))
@@ -48,6 +52,8 @@ struct PagesView: View {
                 )
                 .foregroundColor(Color("Dark"))
                 .background(.white, in: RoundedRectangle(cornerRadius: 40))
+                .accessibilityAddTraits(.isSummaryElement)
+                .accessibilityLabel("Current page")
             
             Button {
                 
@@ -63,12 +69,15 @@ struct PagesView: View {
                     .font(.custom("Raleway-Medium", size: 24))
                     .fontWeight(.medium)
                     .foregroundColor(.bar)
+                    .accessibilityAddTraits(.isButton)
             }
             .frame(
                 width: 90,
                 height: 43
             )
             .background(Color.background, in: RoundedRectangle(cornerRadius: 40))
+            .accessibilityLabel("Next")
+            .accessibilityHint("Go next")
         }
         .padding(.all, 3)
         .background(Color.background)

@@ -23,6 +23,8 @@ struct BadgeView: View {
                     maxWidth: .infinity,
                     alignment: .leading
                 )
+                .accessibilityLabel("Character name")
+                .accessibilityAddTraits(.isHeader)
             
             Text(person.name)
                 .foregroundColor(Color.subheading)
@@ -32,6 +34,8 @@ struct BadgeView: View {
                     maxWidth: .infinity,
                     alignment: .leading
                 )
+                .accessibilityHint("Character name in Aurek-Besh font")
+            
             
             LowerBarView()
         }
