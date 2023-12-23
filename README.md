@@ -29,6 +29,11 @@ El proyecto está estructurado en varios archivos Swift, cada uno con un propós
 
 Para ejecutar este proyecto, necesitas tener instalado Xcode y un Mac con macOS. Abre el proyecto en Xcode y ejecútalo ya sea en el simulador o en un dispositivo físico.
 
+## Recursos
+- [SWAPI](https://swapi.dev)
+- [Alamofire](https://github.com/Alamofire/Alamofire)
+- [Star Wars UI Library](https://www.figma.com/community/file/975862977200081795/star-wars-ui-library)
+
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Por favor, abre una solicitud de extracción con tus cambios.
