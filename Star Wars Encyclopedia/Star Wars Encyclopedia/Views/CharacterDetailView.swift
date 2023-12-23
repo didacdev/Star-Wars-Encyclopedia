@@ -10,12 +10,12 @@ import SwiftUI
 struct CharacterDetailView: View {
     
     var person: Person
-    @State var isPresented: Bool = false
-    @State var attributes: [Attribute] = []
-    @State var planetName: String = ""
-    @State var speciesName: String = ""
-    @State var films: [String] = []
-    @State var isLoading: Bool = false
+    @StateObject var charactersDetailsViewModel: CharacterDetailViewModel
+    
+    init(person: Person) {
+        self.person = person
+        _charactersDetailsViewModel = StateObject(wrappedValue: CharacterDetailViewModel(person: person))
+    }
     
     var body: some View {
         ZStack {
@@ -35,14 +35,14 @@ struct CharacterDetailView: View {
                             
                             UpperBarView()
                             
-                            if isLoading {
+                            if charactersDetailsViewModel.isLoading {
                                 Spacer()
                                 ProgressView()
                                     .scaleEffect(2)
                                     .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                 Spacer()
                             } else {
-                                List (attributes, id: \.name) { attribute in
+                                List (charactersDetailsViewModel.attributes, id: \.name) { attribute in
                                     DetailView(text: attribute.name, content: attribute.value)
                                         .listRowBackground(Color("Background"))
                                         .accessibilityLabel("Detail")
@@ -50,34 +50,11 @@ struct CharacterDetailView: View {
                                 }
                                 .onAppear() {
                                     
-                                    if attributes.isEmpty {
-                                        isLoading = true
+                                    if charactersDetailsViewModel.attributes.isEmpty {
                                         
-                                        StarWarsApi().loadPlanetAndSpeciesAndFilms(
-                                            planetURL: person.homeworld,
-                                            speciesURL: person.species.first ?? "https://swapi.dev/api/species/1/",
-                                            filmsURLs: person.films
-                                        ) { result in
-                                            switch result {
-                                            case .success(let (planet, species, films)):
-                                                isLoading = false
-                                                planetName = planet.name
-                                                speciesName = species.name
-                                                self.films = films.map { "- Episode \($0.episode_id): \($0.title)" }
-                                            case .failure(let error):
-                                                isLoading = false
-                                                print(error)
-                                                isPresented = true
-                                            }
-                                            
-                                            self.attributes.append(Attribute(name: "NAME", value: [person.name]))
-                                            self.attributes.append(Attribute(name: "SPECIES", value: [speciesName]))
-                                            self.attributes.append(Attribute(name: "PLANET", value: [planetName]))
-                                            self.attributes.append(Attribute(name: "BIRTH", value: [person.birth_year]))
-                                            self.attributes.append(Attribute(name: "GENRE", value: [person.gender]))
-                                            self.attributes.append(Attribute(name: "HEIGHT", value: [person.height]))
-                                            self.attributes.append(Attribute(name: "FILMS", value: films))
-                                        }
+                                        charactersDetailsViewModel.isLoading = true
+                                        
+                                        charactersDetailsViewModel.loadPlanetAndSpeciesAndFilms()
                                     }
                                 }
                                 .listStyle(PlainListStyle())
@@ -91,7 +68,7 @@ struct CharacterDetailView: View {
                     }
                 }
             }
-            .alert(isPresented: $isPresented, content: {
+            .alert(isPresented: $charactersDetailsViewModel.isPresented, content: {
                 Alert(title: Text("Connection error"),
                       message: Text("Star Wars Encyclopedia can't connect to the database"),
                       dismissButton: Alert.Button.default(Text("Close"))
