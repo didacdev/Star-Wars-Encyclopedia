@@ -11,12 +11,12 @@ import SwiftUI
 let coloredNavAppearance = UINavigationBarAppearance()
 
 struct CharactersListView: View {
-    @State  var searchText: String = ""
     @State var peopleList: [Person] = []
     @State var page: Int = 1
-    @State  var isPresented: Bool = false
-    @State private var searchDebounceTimer: Timer?
+    @State var searchText: String = ""
+    @State var isPresented: Bool = false
     @State var isLoading: Bool = false
+    @State private var searchDebounceTimer: Timer?
     
     // Init background search field
     init() {
@@ -58,12 +58,17 @@ struct CharactersListView: View {
                                     
                                     HStack {
                                         BadgeView(person: person)
+                                            .accessibilityValue(person.name)
+                                            .accessibilityLabel("Character")
+                                            .accessibilityHint("Link to character info")
                                     }
                                     .overlay(
                                         NavigationLink(destination: CharacterDetailView(person: person)) {
                                             EmptyView()
                                         }
                                             .padding()
+                                            .accessibilityAddTraits(.isButton)
+                                            .accessibilityHint("show character info")
                                     )
                                     .listRowBackground(Color("Background"))
                                 }
@@ -127,6 +132,8 @@ struct CharactersListView: View {
                                     }
                                 }
                                 .listStyle(PlainListStyle())
+                                .accessibilityLabel("Characters list")
+                                .accessibilityHint("Shows a list with all the characters of the current page")
                             }
                             
                             Spacer()

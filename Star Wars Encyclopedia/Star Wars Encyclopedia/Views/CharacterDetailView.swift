@@ -45,6 +45,8 @@ struct CharacterDetailView: View {
                                 List (attributes, id: \.name) { attribute in
                                     DetailView(text: attribute.name, content: attribute.value)
                                         .listRowBackground(Color("Background"))
+                                        .accessibilityLabel("Detail")
+                                        .accessibilityValue(attribute.name)
                                 }
                                 .onAppear() {
                                     
@@ -79,6 +81,8 @@ struct CharacterDetailView: View {
                                     }
                                 }
                                 .listStyle(PlainListStyle())
+                                .accessibilityLabel("Characters detail list")
+                                .accessibilityHint("Shows a list with all the character's details")
                             }
                             
                             LowerBarView()

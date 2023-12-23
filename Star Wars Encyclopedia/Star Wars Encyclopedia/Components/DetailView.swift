@@ -15,10 +15,14 @@ struct DetailView: View {
     var body: some View {
         HStack (alignment: .top){
             Text("\(text): ")
+                .accessibilityLabel("Detail")
+                .accessibilityValue(text)
             VStack (alignment:.leading, spacing: 16){
                 
                 ForEach(content, id: \.hashValue) { item in
                     Text(item)
+                        .accessibilityLabel("Detail content")
+                        .accessibilityValue(item)
                 }
             }
             
